@@ -6,7 +6,8 @@ import useUser from "@/composables/useUser";
 
 const balanceStore = defineStore("balance", () => {
   const { address } = useUser();
-  const { balanceOf, symbol: equitySymbol } = useEquityContract(address);
+  console.log(address)
+  const { balanceOf, symbol: equitySymbol } = useEquityContract(address.value);
   const { getTotalUnclaimed } = useStakingContract(address);
 
   const balance = ref(0);

@@ -28,6 +28,8 @@ const fetchBalance = () =>
 
 fetchBalance();
 
+console.log(wallet)
+
 wallet?.on("block", async (block) => {
   fetchBalance();
   emitAppEvent({ type: "block", payload: block });
